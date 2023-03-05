@@ -1,21 +1,13 @@
+
 #include<bits/stdc++.h>
 using namespace std;
-void  rec(int n,int i){
-    int r;
-    if (n==0){
-        cout<<i<<endl;
-        return;
-    }
-    else{
-        r=n%10;
-        i=i + r;
-        n=n/10;
-        rec(n,i);
-    }
+int sum(int n){
+    if(n==0)cout<<0;
+    else if(n==1)return 1;
+    return n+sum(n-1);
 }
 int main(){
     int n;
     cin>>n;
-    rec(n,0);
+    cout<<sum(n);
 }
-
